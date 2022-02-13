@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+    <form>
+      <label class="signUp">
+          Sign Up
+      </label> 
+      <div>
+        <input type="email" placeholder="type your email" value="" required class="email">
+       <br>
+         <input type="text" placeholder="type your name" value="" required class="name">
+         <br>
+        <input type="password" placeholder="type your password" value="" required class="ps">
+        <span class="eror1">your password must be 8 character at least</span>
+        <br>
+        <span class="eror2">please fill all fields</span>
+        <input type="button" value="Submit" class="submit" >
+    </div>
+
+    </form>
+</div>
+<script>
+    let submit=document.querySelector(".submit");
+
+   submit.onclick=function(){ 
+        
+    let psvalue=document.querySelector(".ps").value;
+    let namevalue=document.querySelector(".name").value;
+    let emailvalue=document.querySelector(".email").value;
+    console.log(namevalue)
+    console.log(psvalue)
+    console.log(emailvalue)
+    psvalue.length<8?document.querySelector(".eror1").style.display="block":"";
+    namevalue||psvalue||emailvalue === ""?document.querySelector(".eror2").style.display="block":"";
+    };
+</script>
+</body>
+</html>
